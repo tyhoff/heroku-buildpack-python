@@ -157,7 +157,10 @@ else
   hash -r
 fi
 
-PIP_VERSION='21.2.4'
+# This is only the initial version
+PIP_VERSION='21.3.1'
+# This is the version kept around for future operations
+REAL_PIP_VERSION='21.2.4'
 SETUPTOOLS_VERSION='62.6.0'
 WHEEL_VERSION='0.37.0'
 
@@ -207,6 +210,6 @@ if ! curl --silent --show-error --fail --retry 3 --retry-connrefused --connect-t
 fi
 
 /app/.heroku/python/bin/python "${PIP_WHEEL}/pip" install --quiet --disable-pip-version-check --no-cache \
-  "${PIP_WHEEL}" "setuptools==${SETUPTOOLS_VERSION}" "wheel==${WHEEL_VERSION}"
+  "${PIP_WHEEL}" "pip==${REAL_PIP_VERSION}" "setuptools==${SETUPTOOLS_VERSION}" "wheel==${WHEEL_VERSION}"
 
 hash -r
