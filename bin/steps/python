@@ -209,7 +209,8 @@ if ! curl --silent --show-error --fail --retry 3 --retry-connrefused --connect-t
   exit 1
 fi
 
+
 /app/.heroku/python/bin/python "${PIP_WHEEL}/pip" install --quiet --disable-pip-version-check --no-cache \
-  "${PIP_WHEEL}" "pip==${REAL_PIP_VERSION}" "setuptools==${SETUPTOOLS_VERSION}" "wheel==${WHEEL_VERSION}"
+  "pip==${REAL_PIP_VERSION}" "setuptools==${SETUPTOOLS_VERSION}" "wheel==${WHEEL_VERSION}"
 
 hash -r
